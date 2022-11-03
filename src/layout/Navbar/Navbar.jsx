@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -41,14 +42,14 @@ function Navbar() {
           <div className={open ? "hidden w-full md:block md:w-auto " : "w-full md:block md:w-auto "} id="navbar-default">
             <ul className="flex  flex-col lg:h-10 p-4 mt-4 mb-4 bg-transparent rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 font-signika">
               <li>
-                <a href="/bmi" className="block  pr-4 pl-3 text-black md:border-0 0 md:p-0 drop-shadow-md" onClick={() => setOpen(!open)}>
+                <Link to="/bmi" className="block  pr-4 pl-3 text-black md:border-0 0 md:p-0 drop-shadow-md" onClick={() => setOpen(!open)}>
                   BMI Calculator
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/hex" className="block  pr-4 pl-3 text-black rounded  md:border-0 0 md:p-0" onClick={() => setOpen(!open)}>
+                <Link to="/hex" className="block  pr-4 pl-3 text-black rounded  md:border-0 0 md:p-0" onClick={() => setOpen(!open)}>
                   Convert RGB
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
