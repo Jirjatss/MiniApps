@@ -29,6 +29,9 @@ function Bmi() {
       setData("");
     }
   };
+  const ok = () => {
+    window.location.reload();
+  };
 
   return (
     <>
@@ -57,7 +60,9 @@ function Bmi() {
             <p className="text-center text-base font-semibold text-black mb-3">{value}</p>
           </div>
           <div id="button" className={`${data}`}>
-            <button className="px-5 py-2 rounded-lg block mx-auto text-black hover:text-[#AB74B9] font-semibold cursor-pointer bg-[#d4e5ce] border-2 border-black">OK</button>
+            <button className="px-5 py-2 rounded-lg block mx-auto text-black hover:text-[#AB74B9] font-semibold cursor-pointer bg-[#d4e5ce] border-2 border-black" onClick={ok}>
+              OK
+            </button>
           </div>
         </form>
       </div>

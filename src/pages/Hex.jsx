@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Masthead from "../components/Masthead";
 import Navbar from "../layout/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 function Hex() {
   const [red, setRed] = useState(null);
@@ -34,6 +35,9 @@ function Hex() {
       e.target.classList.add("hidden");
       setData3("");
     }
+  };
+  const ok = () => {
+    window.location.reload();
   };
 
   return (
@@ -70,7 +74,7 @@ function Hex() {
           <div className={`mt-6 mb-6 ${data}`}>{hasil}</div>
           <div className={`${data1} w-20 h-20 rounded-full mx-auto mb-2`} style={{ backgroundColor: `${hasil}` }}></div>
           <input id="submit" type="submit" value="Calculate BMI" className="px-5 py-2 rounded-lg block mx-auto text-black hover:text-[#AB74B9] font-semibold cursor-pointer bg-[#d4e5ce] border-2 border-black mt-6 mb-6" onClick={convert} />
-          <input id="submit" type="submit" value="OK" className={`px-5 py-2 rounded-lg block mx-auto text-black hover:text-[#AB74B9] font-semibold cursor-pointer bg-[#d4e5ce] border-2 border-black mt-6 mb-6 ${data3}`} />
+          <input id="submit" type="submit" value="OK" className={`px-5 py-2 rounded-lg block mx-auto text-black hover:text-[#AB74B9] font-semibold cursor-pointer bg-[#d4e5ce] border-2 border-black mt-6 mb-6 ${data3}`} onClick={ok} />
           <p className="text-sm text-red-600 font-semibold">What does this RGB to Hex converter do? </p>
           <p className="text-xs">
             It takes input in the form of values for Red, Green and Blue ranging from 0 to 255 and then converts those values to a hexadecimal string that can be used to specify color in html/css code. Photo editing software usually
